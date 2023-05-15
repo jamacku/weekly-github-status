@@ -1,0 +1,34 @@
+{
+  "name": "weekly-github-status",
+  "type": "module",
+  "packageManager": "yarn@3.3.1",
+  "main": "src/main.ts",
+  "bin": { 
+    "wgs": "./dist/main.js" 
+  }, 
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "test": "vitest run --coverage",
+    "update-snapshots": "vitest run --update",
+    "all": "yarn run build && yarn run format && yarn run lint && yarn test"
+  },
+  "dependencies": {
+    "@octokit/request": "6.2.3",
+    "zod": "^3.20.6"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "@vitest/coverage-c8": "0.30.1",
+    "eslint": "^8.29.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.8",
+    "ts-node": "10.9.1",
+    "typescript": "^5.0.0",
+    "vitest": "0.30.1"
+  }
+}
